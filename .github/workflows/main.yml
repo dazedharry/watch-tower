@@ -1,0 +1,30 @@
+name: Update Watch Tower
+
+on:
+  schedule:
+    - cron: "23 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: watch-tower-update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Fetch feeds
+        run: python fetch_feeds.py
+      - name: Commit updated archives
+        run: |
+          git config user.name "watch-tower"
+          git config user.email "watch-tower@users.noreply.github.com"
+          git add docs/data
+          git diff --cached --quiet || (git commit -m "Update stories" && git push)
