@@ -1,0 +1,29 @@
+[
+  {
+    "id": "dazed",
+    "name": "Dazed",
+    "domain": "www.dazeddigital.com",
+    "feeds": ["https://www.dazeddigital.com/rss"],
+    "labels": {
+      "fashion": "Fashion",
+      "beauty": "Beauty",
+      "music": "Music",
+      "film-tv": "Film & TV",
+      "art-photography": "Art & Photography",
+      "artsandculture": "Arts & Culture",
+      "life-culture": "Life & Culture"
+    }
+  },
+  {
+    "id": "another",
+    "name": "AnOther",
+    "domain": "www.anothermag.com",
+    "feeds": ["https://www.anothermag.com/rss"],
+    "labels": {
+      "fashion-beauty": "Fashion & Beauty",
+      "another-man": "AnOther Man",
+      "design-living": "Design & Living",
+      "art-photography": "Art & Photography"
+    }
+  }
+]
